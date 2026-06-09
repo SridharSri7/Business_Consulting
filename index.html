@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="components/auth.css">
     <title>Document</title>
 </head>
 <body>
@@ -31,7 +32,7 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
 
-        <a href="#" class="btn-primary">Get Started</a>
+        <a onclick="openAuth()" class="btn-primary">Get Started</a>
         <div class="menu-toggle">
            ☰
         </div>
@@ -561,6 +562,20 @@
 
 </footer>
 
+<!-- --------- -->
+<div id="auth-container"></div>
+
+<link rel="stylesheet" href="components/auth.css">
+<script src="components/auth.js"></script>
+
+<script>
+fetch("components/auth.html")
+.then(res => res.text())
+.then(data => {
+  document.getElementById("auth-container").innerHTML = data;
+});
+</script>
+<!-- --------------- -->
 <script src="js/home.js"></script>
 </body>
 </html>

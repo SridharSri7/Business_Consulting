@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial;
+      background:#111827;
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      flex-direction:column;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.1);
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      border:1px solid gold;
+    }
+
+    button{
+      margin-top:15px;
+      padding:10px 20px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      background:gold;
+      color:black;
+      font-weight:bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🛡️ Admin Dashboard</h1>
+  <p>Welcome Admin 🔥</p>
+
+  <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+function logout(){
+  localStorage.clear();
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
