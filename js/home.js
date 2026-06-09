@@ -46,6 +46,57 @@ if (hero) {
     }, 5000);
 }
 
+// ============== ABOUT OUR COMPANY =================
+
+const counters = document.querySelectorAll(".count");
+
+function startCount(el) {
+    const target = +el.getAttribute("data-target");
+    let count = 0;
+
+    const speed = target / 60; // animation speed control
+
+    function update() {
+        count += speed;
+
+        if (count < target) {
+            el.textContent = Math.ceil(count) + "+";
+            requestAnimationFrame(update);
+        } else {
+            el.textContent = target + "+";
+        }
+    }
+
+    update();
+}
+
+// ...
+const aboutSection = document.querySelector(".about-company-section");
+
+if (aboutSection) {
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                aboutSection.classList.add("active");
+
+                // start counter animation
+                counters.forEach(startCount);
+
+                observer.unobserve(aboutSection); // run once only
+            }
+
+        });
+
+    }, { threshold: 0.3 });
+
+    observer.observe(aboutSection);
+}
+
+
 
 // ==================== SERVICES SECTION ====================
 const servicesSection = document.querySelector(".js-services");
@@ -211,3 +262,4 @@ if (footer) {
 
     observer.observe(footer);
 }
+

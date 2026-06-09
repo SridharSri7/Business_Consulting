@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/auth.css">
+<title>Auth UI</title>
 </head>
 <body>
-  
-  
 
+<div class="auth-modal" id="authModal">
+
+    <div class="auth-container">
+
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+
+        <!-- LOGIN -->
+        <div id="loginForm">
+
+            <h2>Welcome Back</h2>
+
+            <input type="email" id="loginEmail" placeholder="Email">
+            <div class="password-box">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <span class="toggle-password" onclick="togglePassword('loginPassword', this)">👁</span>
+            </div>
+
+            <select id="loginRole">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <button onclick="loginUser()">Login</button>
+
+            <div class="auth-links">
+                <p>
+                    No account?
+                    <span onclick="showSignup()">Sign Up</span>
+                </p>
+
+                <p class="forgot" onclick="window.location.href='error.html'">
+                    Forgot Password?
+                </p>
+            </div>
+
+        </div>
+
+        <!-- SIGNUP -->
+        <div id="signupForm" style="display:none;">
+
+            <h2>Create Account</h2>
+
+            <input type="text" id="signupName" placeholder="Full Name">
+            <input type="email" id="signupEmail" placeholder="Email">
+            <div class="password-box">
+               <input type="password" id="signupPassword" placeholder="Password">
+               <span class="toggle-password" onclick="togglePassword('signupPassword', this)">👁</span>
+            </div>
+            <div class="password-box">
+              <input type="password" id="signupConfirmPassword" placeholder="Confirm Password">
+              <span class="toggle-password" onclick="togglePassword('signupConfirmPassword', this)">👁</span>
+            </div>
+            <small id="passwordMatchMsg"></small>
+
+            <select id="signupRole">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <button onclick="signupUser()">Create Account</button>
+
+            <div class="auth-links">
+                <p>
+                    Already have an account?
+                    <span onclick="showLogin()">Login</span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="/js/auth.js"></script>
 
 </body>
 </html>

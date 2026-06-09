@@ -1,25 +1,564 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Dashboard</title>
+<link rel="stylesheet" href="css/user-dashboard.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    
-    <div class="card">
-  <h1>👤 User Dashboard</h1>
-  <p>Welcome User 👋</p>
 
-  <button onclick="logout()">Logout</button>
+<!-- TOPBAR -->
+<header class="topbar">
+
+    <div class="logo">
+        <img src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=200"
+             alt="logo">
+    </div>
+
+    <a href="index.html" class="home-btn">
+        <i class="fa-solid fa-house"></i>
+        Home
+    </a>
+
+</header>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <ul>
+
+            <li class="active" data-page="dashboard">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </li>
+
+            <li data-page="notifications">
+                <i class="fa-solid fa-bell"></i>
+                Notifications
+            </li>
+
+            <li data-page="profile">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </li>
+
+            <li data-page="inbox">
+                <i class="fa-solid fa-envelope"></i>
+                Inbox
+            </li>
+
+            <li data-page="settings">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+
+            <li onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+<section id="dashboard" class="page active">
+
+    <div class="dashboard-header animate-top">
+        <h1>Welcome Back, Sridhar 👋</h1>
+        <p>Here's what's happening with your account today.</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+
+        <div class="stat-card animate-left">
+            <span>Total Projects</span>
+            <h2>24</h2>
+            <p>+12% this month</p>
+        </div>
+
+        <div class="stat-card animate-bottom">
+            <span>Messages</span>
+            <h2>158</h2>
+            <p>+28 new today</p>
+        </div>
+
+        <div class="stat-card animate-top">
+            <span>Notifications</span>
+            <h2>17</h2>
+            <p>5 unread</p>
+        </div>
+
+        <div class="stat-card animate-right">
+            <span>Revenue</span>
+            <h2>₹1,25,000</h2>
+            <p>+18% growth</p>
+        </div>
+
+    </div>
+
+    <!-- MAIN ROW -->
+    <div class="dashboard-row">
+
+        <!-- RECENT ACTIVITY -->
+        <div class="dashboard-card animate-left">
+
+            <h3>Recent Activity</h3>
+
+            <div class="activity-item">
+                ✅ New user registered
+            </div>
+
+            <div class="activity-item">
+                📩 Received 12 new messages
+            </div>
+
+            <div class="activity-item">
+                🚀 New project launched
+            </div>
+
+            <div class="activity-item">
+                💰 Payment received successfully
+            </div>
+
+        </div>
+
+        <!-- QUICK ACTIONS -->
+        <div class="dashboard-card animate-right">
+
+            <h3>Quick Actions</h3>
+
+            <button class="action-btn animate-left">
+                Create Project
+            </button>
+
+            <button class="action-btn animate-right">
+                Send Message
+            </button>
+
+            <button class="action-btn animate-left">
+                View Reports
+            </button>
+
+            <button class="action-btn animate-right">
+                Manage Users
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="dashboard-card full-width animate-bottom">
+
+        <h3>Recent Projects</h3>
+
+        <table class="project-table">
+
+            <tr>
+                <th>Project</th>
+                <th>Status</th>
+                <th>Progress</th>
+            </tr>
+
+            <tr>
+                <td>SEO Campaign</td>
+                <td>Active</td>
+                <td>78%</td>
+            </tr>
+
+            <tr>
+                <td>Website Redesign</td>
+                <td>In Review</td>
+                <td>65%</td>
+            </tr>
+
+            <tr>
+                <td>Google Ads</td>
+                <td>Running</td>
+                <td>91%</td>
+            </tr>
+
+            <tr>
+                <td>Social Media</td>
+                <td>Completed</td>
+                <td>100%</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!--  -->
+
+        <section id="notifications" class="page">
+
+ <div class="notification-header">
+        <h1>Notifications Center</h1>
+        <p>
+            Stay informed with real-time updates,
+            project alerts, system announcements,
+            team activities, and security notifications.
+        </p>
+    </div>
+
+    <div class="notification-grid">
+
+        <div class="notification-card unread">
+            <div class="notification-icon">🔔</div>
+            <h3>New Project Assigned</h3>
+            <p>A new client project has been added to your dashboard.</p>
+            <span class="notification-time">5 min ago</span>
+        </div>
+
+        <!-- More cards -->
+
+
+    <div class="notification-item ">
+        <div class="notification-icon">✅</div>
+        <div class="notification-content">
+            <h4>Task Completed</h4>
+            <p>Your recent UI Design task has been marked as completed.</p>
+            <span>30 minutes ago</span>
+        </div>
+    </div>
+
+    <div class="notification-item">
+        <div class="notification-icon">📈</div>
+        <div class="notification-content">
+            <h4>Analytics Updated</h4>
+            <p>Weekly performance reports are now available for review.</p>
+            <span>2 hours ago</span>
+        </div>
+    </div>
+
+    <div class="notification-item">
+        <div class="notification-icon">💬</div>
+        <div class="notification-content">
+            <h4>New Message Received</h4>
+            <p>You have received a new message from the Admin Team.</p>
+            <span>4 hours ago</span>
+        </div>
+    </div>
+
+    <div class="notification-item">
+        <div class="notification-icon">🚀</div>
+        <div class="notification-content">
+            <h4>Feature Released</h4>
+            <p>Dashboard customization tools are now available.</p>
+            <span>Yesterday</span>
+        </div>
+    </div>
+
+    <div class="notification-item">
+        <div class="notification-icon">🔒</div>
+        <div class="notification-content">
+            <h4>Security Alert</h4>
+            <p>Your account password was successfully updated.</p>
+            <span>2 days ago</span>
+        </div>
+    </div>
+
+
+    </div>
+    <!-- ---------------------- -->
+
+
+        
+
+        </section>
+
+        <section id="profile" class="page">
+            
+<div class="profile-section">
+
+<div class="profile-card">
+
+    <div class="profile-top">
+
+        <!-- Avatar generated from email -->
+        <div class="avatar" id="profileAvatar">U</div>
+
+        <div class="profile-info">
+
+            <!-- dynamic email -->
+            <h2 id="profileName">Loading...</h2>
+
+            <p id="profileEmail">loading...</p>
+
+            <!-- dynamic role -->
+            <span class="role-badge" id="profileRole">
+                User
+            </span>
+
+        </div>
+
+    </div>
+
 </div>
 
-<script>
-function logout(){
-  localStorage.clear();
-  window.location.href = "index.html";
-}
-</script>
 
+    <div class="profile-grid">
+
+        <div class="info-card">
+            <h3>Account Information</h3>
+
+            <div class="info-row">
+                <span>Full Name</span>
+                <strong id="fullName">John Doe</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Email Address</span>
+                <strong id="emailAddress">john@example.com</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Role</span>
+                <strong id="roleText">User</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Member Since</span>
+                <strong>June 2026</strong>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+            <h3>Workspace Statistics</h3>
+
+            <div class="stat-box">
+                <h4>24</h4>
+                <p>Projects Completed</p>
+            </div>
+
+            <div class="stat-box">
+                <h4>12</h4>
+                <p>Active Tasks</p>
+            </div>
+
+            <div class="stat-box">
+                <h4>95%</h4>
+                <p>Performance Score</p>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+            <h3>Security</h3>
+
+            <div class="info-row">
+                <span>Password Status</span>
+                <strong>Protected</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Last Login</span>
+                <strong>Today</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Authentication</span>
+                <strong>Enabled</strong>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+            <h3>Recent Activity</h3>
+
+            <ul class="activity-list">
+                <li>Created a new project dashboard.</li>
+                <li>Updated profile settings.</li>
+                <li>Completed UI design review.</li>
+                <li>Received system notification.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </section>
+
+        
+
+<section id="inbox" class="page">
+
+    <div class="inbox-section">
+
+        <!-- HEADER -->
+        <div class="inbox-header">
+            <h2>Inbox</h2>
+            <p>All your messages, system alerts, and team communications appear here.</p>
+        </div>
+
+        <!-- MESSAGE LIST -->
+        <div class="inbox-list">
+
+            <div class="inbox-item unread">
+                <div class="inbox-avatar">A</div>
+
+                <div class="inbox-content">
+                    <div class="inbox-top">
+                        <h4>Admin Team</h4>
+                        <span>Just now</span>
+                    </div>
+                    <p>Your dashboard access has been verified successfully.</p>
+                </div>
+            </div>
+
+            <div class="inbox-item">
+                <div class="inbox-avatar">S</div>
+
+                <div class="inbox-content">
+                    <div class="inbox-top">
+                        <h4>System Alert</h4>
+                        <span>10 min ago</span>
+                    </div>
+                    <p>New security update has been applied to your account.</p>
+                </div>
+            </div>
+
+            <div class="inbox-item">
+                <div class="inbox-avatar">T</div>
+
+                <div class="inbox-content">
+                    <div class="inbox-top">
+                        <h4>Team Lead</h4>
+                        <span>1 hr ago</span>
+                    </div>
+                    <p>Please review the latest project updates in dashboard section.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- SETTINGS PAGE -->
+
+<section id="settings" class="page">
+
+    <div class="settings-section">
+
+        <div class="settings-header">
+            <h2>Settings</h2>
+            <p>Manage your account preferences, security, and system configurations.</p>
+        </div>
+
+        <div class="settings-grid">
+
+            <!-- ACCOUNT -->
+            <div class="settings-card slide-in">
+                <h3>Account Settings</h3>
+
+                <div class="settings-item">
+                    <span>Username</span>
+                    <input type="text" placeholder="Enter username">
+                </div>
+
+                <div class="settings-item">
+                    <span>Email Notifications</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+
+                <div class="settings-item">
+                    <span>Language</span>
+                    <select>
+                        <option>English</option>
+                        <option>Tamil</option>
+                        <option>Hindi</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- SECURITY -->
+            <div class="settings-card slide-in">
+                <h3>Security</h3>
+
+                <div class="settings-item">
+                    <span>Change Password</span>
+                    <input type="password" placeholder="New password">
+                </div>
+
+                <div class="settings-item">
+                    <span>Two Factor Auth</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span></span>
+                    </label>
+                </div>
+
+                <div class="settings-item">
+                    <span>Login Alerts</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- PRIVACY -->
+            <div class="settings-card slide-in">
+                <h3>Privacy</h3>
+
+                <div class="settings-item">
+                    <span>Profile Visibility</span>
+                    <select>
+                        <option>Public</option>
+                        <option>Private</option>
+                        <option>Friends Only</option>
+                    </select>
+                </div>
+
+                <div class="settings-item">
+                    <span>Activity Status</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+
+                <div class="settings-item">
+                    <span>Data Sharing</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+<script src="js/user-dashboard.js"></script>
 </body>
 </html>

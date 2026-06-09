@@ -1,0 +1,191 @@
+body{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background: radial-gradient(circle at top, #1e1b4b, #0f172a 60%, #020617);
+    min-height:100vh;
+}
+
+/* MODAL BACKDROP */
+.auth-modal{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(2,6,23,0.75);
+    z-index:9999;
+}
+
+.auth-modal.active{
+    display:flex;
+}
+
+/* CARD */
+.auth-container{
+    width:390px;
+    padding:32px;
+    border-radius:16px;
+
+    background:linear-gradient(145deg,#1d4087,#4c75cf);
+    border:1px solid rgba(99,102,241,0.25);
+
+    box-shadow:
+        0 0 25px rgba(99,102,241,0.15),
+        0 20px 60px rgba(0,0,0,0.6);
+
+    position:relative;
+}
+
+/* TITLE */
+.auth-container h2{
+    text-align:center;
+    color:#e0e7ff;
+    margin-bottom:18px;
+    letter-spacing:0.5px;
+}
+
+/* INPUTS */
+.auth-container input,
+.auth-container select{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+
+    border-radius:10px;
+    border:1px solid #1f2937;
+
+    background:#091225;
+    color:#fff;
+
+    outline:none;
+    transition:0.25s;
+}
+
+/* FOCUS GLOW */
+.auth-container input:focus,
+.auth-container select:focus{
+    border-color:#6366f1;
+    box-shadow:0 0 0 3px rgba(99,102,241,0.2);
+    transform:scale(1.01);
+}
+
+/* DROPDOWN FIX */
+.auth-container select option{
+    background:#2c3b5d;
+    color:#fff;
+    border-radius: 20px;
+}
+
+/* BUTTON */
+.auth-container button{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+
+    border:none;
+    border-radius:10px;
+
+    background:linear-gradient(135deg,#6366f1,#22c55e);
+    color:white;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:0.25s;
+
+    box-shadow:0 0 15px rgba(99,102,241,0.25);
+}
+
+.auth-container button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(99,102,241,0.35);
+}
+
+/* TEXT */
+.auth-container p{
+    text-align:center;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.auth-container span{
+    color:#60a5fa;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* FORGOT */
+.forgot{
+    color:#fbbf24;
+    font-size:13px;
+    cursor:pointer;
+}
+
+.forgot:hover{
+    text-decoration:underline;
+}
+
+/* CLOSE */
+.close-btn{
+    position:absolute;
+    top:10px;
+    right:14px;
+    font-size:22px;
+    color:#c7d2fe;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.close-btn:hover{
+    color:#ef4444;
+    transform:rotate(90deg);
+}
+
+/* PASSWORD MATCH */
+#passwordMatchMsg{
+    display:block;
+    font-size:12px;
+    margin-top:6px;
+    min-height:16px;
+}
+
+/* ERROR SUCCESS */
+.input-error{
+    border:1px solid #ef4444 !important;
+    box-shadow:0 0 10px rgba(239,68,68,0.25);
+}
+
+.input-success{
+    border:1px solid #22c55e !important;
+    box-shadow:0 0 10px rgba(34,197,94,0.25);
+}
+
+.auth-links{
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+.password-box{
+    position:relative;
+    width:100%;
+}
+
+.password-box input{
+    width:100%;
+    padding-right:50px;
+}
+
+.toggle-password{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    font-size:18px;
+    user-select:none;
+    color:#888;
+    transition:0.3s;
+}
+
+.toggle-password:hover{
+    color:#00d4ff;
+}
