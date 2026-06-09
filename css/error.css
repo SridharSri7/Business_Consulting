@@ -1,0 +1,194 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:
+    linear-gradient(
+    135deg,
+    #160028,
+    #2d0b52,
+    #5d1bb3,
+    #8e4dff
+    );
+}
+
+.error-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.glass-card{
+    width:600px;
+    max-width:100%;
+    padding:60px 40px;
+    text-align:center;
+
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.3),
+    0 0 50px rgba(142,77,255,.4);
+
+    animation:cardEntry 1s ease;
+}
+
+.error-number{
+    font-size:9rem;
+    font-weight:900;
+    color:#fff;
+
+    text-shadow:
+    0 0 20px #ffffff,
+    0 0 40px #b98cff,
+    0 0 80px #8e4dff;
+
+    animation:glow 3s infinite alternate;
+}
+
+.error-title{
+    font-size:2rem;
+    color:white;
+    margin-bottom:15px;
+}
+
+.error-text{
+    color:rgba(255,255,255,.8);
+    line-height:1.8;
+    margin-bottom:35px;
+    font-size:1.05rem;
+}
+
+.home-btn{
+    display:inline-block;
+    padding:16px 35px;
+    border-radius:50px;
+
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+
+    background:
+    linear-gradient(
+    135deg,
+    #a855f7,
+    #7c3aed
+    );
+
+    box-shadow:
+    0 10px 25px rgba(124,58,237,.4);
+
+    transition:.4s;
+}
+
+.home-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:
+    0 15px 40px rgba(168,85,247,.7);
+}
+
+.floating-shape{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(10px);
+}
+
+.shape1{
+    width:220px;
+    height:220px;
+    background:#a855f7;
+    top:10%;
+    left:10%;
+    opacity:.3;
+    animation:float 8s infinite ease-in-out;
+}
+
+.shape2{
+    width:180px;
+    height:180px;
+    background:#ffffff;
+    bottom:10%;
+    right:10%;
+    opacity:.12;
+    animation:float 10s infinite ease-in-out;
+}
+
+.shape3{
+    width:120px;
+    height:120px;
+    background:#7c3aed;
+    top:60%;
+    left:20%;
+    opacity:.25;
+    animation:float 7s infinite ease-in-out;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-30px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes glow{
+    from{
+        text-shadow:
+        0 0 20px #fff,
+        0 0 40px #b98cff;
+    }
+    to{
+        text-shadow:
+        0 0 30px #fff,
+        0 0 60px #b98cff,
+        0 0 120px #8e4dff;
+    }
+}
+
+@keyframes cardEntry{
+    from{
+        opacity:0;
+        transform:translateY(60px) scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@media(max-width:768px){
+
+    .error-number{
+        font-size:6rem;
+    }
+
+    .error-title{
+        font-size:1.6rem;
+    }
+
+    .glass-card{
+        padding:40px 25px;
+    }
+}

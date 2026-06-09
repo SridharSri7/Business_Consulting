@@ -1,3 +1,18 @@
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    if(navLinks.classList.contains("active")){
+        menuToggle.innerHTML = "✕";
+    }else{
+        menuToggle.innerHTML = "☰";
+    }
+});
+// ==========================================================
+
 const aboutHero = document.querySelector(".js-about-hero");
 
 if (aboutHero) {
@@ -226,3 +241,4 @@ if (footer) {
 
     observer.observe(footer);
 }
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="css/dashboarderror.css">
+</head>
+<body>
+
+<section class="error-section">
+
+    <div class="glow"></div>
+
+    <div class="error-box">
+
+        <h1 class="error-code">404</h1>
+
+        <h2>Oops! Page Not Found</h2>
+
+        <p>
+            The page you are looking for might have been removed, 
+            had its name changed, or is temporarily unavailable.
+        </p>
+
+        <div class="btn-group">
+            <a  onclick="goBackDashboard()" class="btn primary">Go Dashboard</a>
+            <a href="contact.html" class="btn secondary">Contact Support</a>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+function goBackDashboard() {
+
+    const user = JSON.parse(
+        localStorage.getItem("loggedUser")
+    );
+
+    if (!user) {
+        location.href = "index.html";
+    }
+    else if (user.role === "admin") {
+        location.href = "admin-dashboard.html";
+    }
+    else {
+        location.href = "user-dashboard.html";
+    }
+
+}
+</script>
+</body>
+</html>

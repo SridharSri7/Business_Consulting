@@ -1,31 +1,24 @@
-// ==================== MOBILE MENU ====================
-const menuToggle = document.querySelector(".menu-toggle");
+const menuBtn = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 
-        menuToggle.innerHTML = navLinks.classList.contains("active")
-            ? "✕"
-            : "☰";
-    });
-}
+/* Mobile Dropdown */
+document.querySelectorAll(".dropdown").forEach(drop => {
 
+    drop.addEventListener("click", function(e){
 
-// ==================== MOBILE DROPDOWN (SAFE) ====================
-const dropdown = document.querySelector(".dropdown");
-const pagesLink = document.querySelector(".pages-link");
+        if(window.innerWidth <= 768){
 
-if (dropdown && pagesLink) {
-    pagesLink.addEventListener("click", (e) => {
-        if (window.innerWidth <= 768) {
             e.preventDefault();
-            dropdown.classList.toggle("active");
+            this.classList.toggle("active");
         }
-    });
-}
 
+    });
+
+});
 
 // ==================== HERO BACKGROUND SLIDER ====================
 const hero = document.querySelector(".hero");
