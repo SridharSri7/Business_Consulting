@@ -326,9 +326,9 @@ body{
         display:block;
     }
 
-    .btn-primary{
+    /* .btn-primary{
         display:none;
-    }
+    } */
 }
 
 /* ==========================
@@ -1681,9 +1681,9 @@ body{
         width:100%;
     }
 
-    .btn-primary{
+    /* .btn-primary{
         display:none;
-    }
+    } */
 }
 
 body.menu-open {

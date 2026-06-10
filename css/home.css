@@ -2203,3 +2203,21 @@ body{
     }
 
 }
+
+.mobile-auth{
+    display:none;
+}
+
+@media(max-width:768px){
+
+    .btn-primary{
+        display:block;
+        width:40%;
+        text-align:center;
+        padding:14px;
+        border-radius:50px;
+        background:#7C3AED;
+        color:#fff !important;
+        font-weight:600;
+    }
+}
