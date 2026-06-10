@@ -11,147 +11,6 @@ body{
 
 
 
-/* FLOATING PARTICLES BACKGROUND */
-.particles-bg{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    pointer-events:none;
-    z-index:-1;
-}
-
-.particles-bg span{
-    position:absolute;
-    display:block;
-    border-radius:50%;
-
-    background:rgba(124,58,237,0.18);
-
-    box-shadow:
-        0 0 15px rgba(124,58,237,0.3),
-        0 0 30px rgba(168,85,247,0.15);
-
-    animation:floatParticle linear infinite;
-}
-
-/* Different Sizes + Positions */
-
-.particles-bg span:nth-child(1){
-    width:8px;
-    height:8px;
-    left:5%;
-    animation-duration:18s;
-    animation-delay:-2s;
-}
-
-.particles-bg span:nth-child(2){
-    width:12px;
-    height:12px;
-    left:15%;
-    animation-duration:22s;
-}
-
-.particles-bg span:nth-child(3){
-    width:6px;
-    height:6px;
-    left:25%;
-    animation-duration:16s;
-}
-
-.particles-bg span:nth-child(4){
-    width:14px;
-    height:14px;
-    left:35%;
-    animation-duration:25s;
-}
-
-.particles-bg span:nth-child(5){
-    width:10px;
-    height:10px;
-    left:45%;
-    animation-duration:20s;
-}
-
-.particles-bg span:nth-child(6){
-    width:7px;
-    height:7px;
-    left:55%;
-    animation-duration:17s;
-}
-
-.particles-bg span:nth-child(7){
-    width:15px;
-    height:15px;
-    left:65%;
-    animation-duration:28s;
-}
-
-.particles-bg span:nth-child(8){
-    width:9px;
-    height:9px;
-    left:75%;
-    animation-duration:19s;
-}
-
-.particles-bg span:nth-child(9){
-    width:11px;
-    height:11px;
-    left:82%;
-    animation-duration:24s;
-}
-
-.particles-bg span:nth-child(10){
-    width:6px;
-    height:6px;
-    left:90%;
-    animation-duration:15s;
-}
-
-.particles-bg span:nth-child(11){
-    width:13px;
-    height:13px;
-    left:60%;
-    animation-duration:23s;
-}
-
-.particles-bg span:nth-child(12){
-    width:8px;
-    height:8px;
-    left:30%;
-    animation-duration:18s;
-}
-
-@keyframes floatParticle{
-    0%{
-        transform:
-            translateY(110vh)
-            translateX(0)
-            scale(0.8);
-
-        opacity:0;
-    }
-
-    10%{
-        opacity:1;
-    }
-
-    50%{
-        transform:
-            translateY(50vh)
-            translateX(30px)
-            scale(1);
-    }
-
-    100%{
-        transform:
-            translateY(-20vh)
-            translateX(-30px)
-            scale(0.8);
-
-        opacity:0;
-    }
-}
-
 .navbar{
     width:90%;
     margin:auto;
@@ -355,7 +214,7 @@ body{
 .hero{
     min-height:100vh;
 
-    background-image:url("/images/istockphoto-1.jpg");
+    background-image:url("images/business-meeting-off.webp");
 
     background-size:cover;
     background-position:center;
@@ -2115,76 +1974,141 @@ body{
     }
 }
 
-/* navbar */
+
+/* ======================================== */
 /* ==========================
-   NAVBAR RESPONSIVE FIX
+   NAVBAR
 ========================== */
 
 .navbar{
-    width:90%;
-    margin:auto;
+    width:100%;
     height:90px;
+    padding:0 5%;
+
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
+
+    background:#0B0B0F;
     position:relative;
     z-index:1000;
 }
 
+.logo h2{
+    color:#fff;
+    font-size:32px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#7C3AED;
+}
+
+/* Dropdown */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+
+    width:200px;
+
+    background:#14141A;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;
+
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+}
+
+.dropdown-menu li{
+    padding:15px 20px;
+}
+
+/* Button */
+.btn-primary{
+    padding:14px 28px;
+    border-radius:50px;
+    background:#7C3AED;
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    background:#9F67FF;
+    transform:translateY(-3px);
+}
+
+/* Hamburger */
 .menu-toggle{
     display:none;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
 }
 
-/* DESKTOP */
-@media (min-width:769px){
+/* ==========================
+   TABLET
+========================== */
+
+@media(max-width:992px){
+
+    .navbar{
+        padding:0 4%;
+    }
 
     .nav-links{
-        display:flex !important;
-        align-items:center;
-        gap:35px;
-        position:static;
-        max-height:none;
-        overflow:visible;
-        background:transparent;
-    }
-
-    .dropdown-menu{
-        position:absolute;
-        top:40px;
-        left:0;
-        width:200px;
-        display:block;
-        opacity:0;
-        visibility:hidden;
-        transition:.3s;
-    }
-
-    .dropdown:hover .dropdown-menu{
-        opacity:1;
-        visibility:visible;
+        gap:20px;
     }
 }
 
-/* MOBILE */
-@media (max-width:768px){
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
 
     .navbar{
         height:80px;
+        padding:0 20px;
     }
 
     .menu-toggle{
         display:block;
-        color:#fff;
-        font-size:30px;
-        cursor:pointer;
         z-index:1002;
     }
 
     .nav-links{
-        position:absolute;
+        position:fixed;
         top:80px;
         left:0;
-        width:100%;
+
+        width:100vw;
 
         display:flex;
         flex-direction:column;
@@ -2195,10 +2119,13 @@ body{
         max-height:0;
         overflow:hidden;
 
+        gap:0;
+
         transition:max-height .4s ease;
 
-        border-radius:0 0 20px 20px;
-        box-shadow:0 15px 40px rgba(0,0,0,.4);
+        border-top:1px solid rgba(255,255,255,.08);
+
+        z-index:1001;
     }
 
     .nav-links.active{
@@ -2216,15 +2143,19 @@ body{
         width:100%;
     }
 
-    /* MOBILE DROPDOWN */
+    /* Mobile Dropdown */
     .dropdown-menu{
         position:static;
         width:100%;
+
         background:#181820;
+        border:none;
+        border-radius:0;
+
         opacity:1;
         visibility:visible;
+
         display:none;
-        border:none;
     }
 
     .dropdown.active .dropdown-menu{
@@ -2236,6 +2167,21 @@ body{
     }
 }
 
-body.menu-open {
-    overflow: auto;   /* or scroll */
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media(max-width:480px){
+
+    .logo h2{
+        font-size:24px;
+    }
+
+    .menu-toggle{
+        font-size:28px;
+    }
+
+    .nav-links a{
+        font-size:14px;
+    }
 }

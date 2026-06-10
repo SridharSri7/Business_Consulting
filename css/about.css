@@ -356,7 +356,7 @@ body{
      /* TEMP UNSPLASH IMAGE */
     background:
         linear-gradient(rgba(45, 45, 47, 0.75), rgba(27, 27, 31, 0.85)),
-        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80");
+        url("images/contentCreation\ \(1\).webp");
 
     background-size:cover;
     background-position:center;
@@ -1688,4 +1688,8 @@ body{
 
 body.menu-open {
     overflow: auto;   /* or scroll */
+}
+
+.team-card h4 {
+    color: white;
 }
