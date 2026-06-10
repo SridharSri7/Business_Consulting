@@ -62,4 +62,23 @@ document.getElementById("roleText").textContent = role;
 // name
 document.getElementById("profileName").textContent = name;
 
-// ========= INBOX ===========
+// ================= WELCOME TEXT =================
+
+const welcomeEl = document.getElementById("welcomeText");
+
+if (welcomeEl) {
+
+    let formattedName = name
+        .replace(/[._-]/g, " ")
+        .replace(/\d+/g, "")
+        .trim();
+
+    formattedName = formattedName
+        .split(" ")
+        .map(word =>
+            word.charAt(0).toUpperCase() + word.slice(1)
+        )
+        .join(" ");
+
+    welcomeEl.textContent = `Welcome Back, ${formattedName} 👋`;
+}
