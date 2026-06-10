@@ -1,15 +1,77 @@
-const menuToggle = document.querySelector(".menu-toggle");
+// ================= NAVBAR =================
+const menuBtn = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links a");
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+if (menuBtn && navLinks) {
 
-    if(navLinks.classList.contains("active")){
-        menuToggle.innerHTML = "✕";
-    }else{
-        menuToggle.innerHTML = "☰";
-    }
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+        if (navLinks.classList.contains("active")) {
+
+            // Disable page scroll
+            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden";
+
+            menuBtn.innerHTML = "✕";
+
+        } else {
+
+            // Enable page scroll
+            document.body.style.overflow = "auto";
+            document.documentElement.style.overflow = "auto";
+
+            menuBtn.innerHTML = "☰";
+        }
+    });
+
+    // Close menu when clicking links
+    navItems.forEach(link => {
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+            document.body.style.overflow = "auto";
+            document.documentElement.style.overflow = "auto";
+
+            menuBtn.innerHTML = "☰";
+        });
+    });
+
+    // Reset on resize
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 768) {
+
+            navLinks.classList.remove("active");
+
+            document.body.style.overflow = "auto";
+            document.documentElement.style.overflow = "auto";
+
+            menuBtn.innerHTML = "☰";
+        }
+    });
+}
+
+
+// ================= MOBILE DROPDOWN =================
+document.querySelectorAll(".dropdown").forEach(drop => {
+
+    drop.addEventListener("click", function(e) {
+
+        if (window.innerWidth <= 768) {
+
+            e.preventDefault();
+            this.classList.toggle("active");
+
+        }
+
+    });
+
 });
+
 
 // =============================
 

@@ -231,7 +231,7 @@ body{
 
   background:
     linear-gradient(to right, rgba(11,15,26,0.95), rgba(11,15,26,0.4)),
-    url("https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600") center/cover no-repeat;
+    url("/images/Laptop3.webp") center/cover no-repeat;
 }
 
 /* LEFT CONTENT */

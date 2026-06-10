@@ -290,7 +290,7 @@ body{
     /* TEMP UNSPLASH IMAGE */
     background:
         linear-gradient(rgba(5,5,16,0.75), rgba(5,5,16,0.85)),
-        url("images/digital-design-businessman.webp");
+        url("/images/digital-design-businessman.webp");
 
     background-size:cover;
     background-position:center;

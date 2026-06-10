@@ -1,50 +1,53 @@
-// =======================================
-// NAVBAR
-// =======================================
-
+// ================= NAVBAR =================
 const menuBtn = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links a");
 
 if (menuBtn && navLinks) {
 
     menuBtn.addEventListener("click", () => {
+
         navLinks.classList.toggle("active");
+
+        // Disable / Enable body scroll
+        if (navLinks.classList.contains("active")) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
     });
 
-    // Close menu after click
-    document.querySelectorAll(".nav-links a").forEach(link => {
-
+    // Close menu when clicking any nav link
+    navItems.forEach(link => {
         link.addEventListener("click", () => {
-
-            if (window.innerWidth <= 768) {
-                navLinks.classList.remove("active");
-            }
-
+            navLinks.classList.remove("active");
+            document.body.style.overflow = "auto";
         });
-
     });
 
-    // Mobile dropdown
-    document.querySelectorAll(".dropdown").forEach(drop => {
-
-        drop.addEventListener("click", function (e) {
-
-            if (window.innerWidth <= 768) {
-
-                if (e.target.closest(".dropdown > a")) {
-
-                    e.preventDefault();
-                    this.classList.toggle("active");
-
-                }
-
-            }
-
-        });
-
+    // Close menu on desktop resize
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+            navLinks.classList.remove("active");
+            document.body.style.overflow = "auto";
+        }
     });
-
 }
+
+
+// ================= MOBILE DROPDOWN =================
+document.querySelectorAll(".dropdown").forEach(drop => {
+
+    drop.addEventListener("click", function(e) {
+
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.classList.toggle("active");
+        }
+
+    });
+
+});
 
 // =======================================
 // CUSTOM CURSOR

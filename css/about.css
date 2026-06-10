@@ -356,7 +356,7 @@ body{
      /* TEMP UNSPLASH IMAGE */
     background:
         linear-gradient(rgba(45, 45, 47, 0.75), rgba(27, 27, 31, 0.85)),
-        url("images/contentCreation\ \(1\).webp");
+        url("/images/contentCreation\ \(1\).webp");
 
     background-size:cover;
     background-position:center;
