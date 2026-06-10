@@ -1381,3 +1381,21 @@ img{
 body.menu-open {
     overflow: auto;   /* or scroll */
 }
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:50px; /* Adjust as needed */
+    width:auto;
+    display:block;
+}
+@media(max-width:768px){
+
+    .logo img{
+        height:42px;
+    }
+
+}
