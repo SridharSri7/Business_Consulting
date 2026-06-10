@@ -1157,3 +1157,139 @@ body{
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+
+/* =========================
+   FINAL MOBILE RESPONSIVE FIX
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* ===== TOPBAR ===== */
+    .topbar {
+        flex-direction: row;
+        padding: 0 12px;
+        height: 60px;
+    }
+
+    .logo img {
+        height: 38px;
+        width: auto;
+    }
+
+    .home-btn {
+        padding: 7px 12px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    /* ===== LAYOUT ===== */
+    .dashboard-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* ===== SIDEBAR FIX (IMPORTANT) ===== */
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    .sidebar ul {
+        display: flex;
+        gap: 10px;
+        white-space: nowrap;
+    }
+
+    .sidebar li {
+        flex-shrink: 0;
+        padding: 10px 14px;
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+
+    /* ===== CONTENT ===== */
+    .content {
+        padding: 15px;
+    }
+
+    /* ===== ALL GRIDS BECOME SINGLE COLUMN ===== */
+    .cards,
+    .stats-grid,
+    .dashboard-row,
+    .profile-grid,
+    .settings-grid,
+    .admin-stats,
+    .notification-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ===== DASHBOARD HEADER ===== */
+    .dashboard-header h1 {
+        font-size: 22px;
+    }
+
+    .dashboard-header p {
+        font-size: 14px;
+    }
+
+    /* ===== PROFILE FIX ===== */
+    .profile-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-top img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* ===== INBOX FIX ===== */
+    .inbox-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .inbox-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    /* ===== SETTINGS FIX ===== */
+    .settings-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .settings-item input,
+    .settings-item select {
+        width: 100%;
+    }
+
+    /* ===== TABLE FIX ===== */
+    .admin-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* ===== BUTTON FIX ===== */
+    .action-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    /* ===== TEXT SIZE ===== */
+    .card h2,
+    .stat-card h2 {
+        font-size: 24px;
+    }
+
+    /* ===== NOTIFICATION ===== */
+    .notification-item {
+        flex-direction: column;
+    }
+}

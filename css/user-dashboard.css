@@ -1062,3 +1062,131 @@ body{
 .admin-card{
     backdrop-filter: blur(10px);
 }
+
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:50px; /* Adjust as needed */
+    width:auto;
+    display:block;
+}
+@media(max-width:768px){
+
+    .logo img{
+        height:42px;
+    }
+
+}
+
+/* FINAL FIX */
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* TOPBAR FIX */
+    .topbar {
+        flex-direction: row;
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .logo img {
+        height: 38px;
+    }
+
+    .home-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    /* LAYOUT FIX */
+    .dashboard-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* SIDEBAR FIX (make it horizontal scroll) */
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .sidebar ul {
+        display: flex;
+        gap: 10px;
+    }
+
+    .sidebar li {
+        display: inline-block;
+        padding: 10px 14px;
+        font-size: 14px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    /* CONTENT FIX */
+    .content {
+        padding: 15px;
+    }
+
+    /* DASHBOARD GRID FIX */
+    .cards,
+    .stats-grid,
+    .dashboard-row,
+    .admin-stats,
+    .settings-grid,
+    .profile-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* TEXT SIZE FIX */
+    .dashboard-header h1 {
+        font-size: 22px;
+    }
+
+    .dashboard-header p {
+        font-size: 14px;
+    }
+
+    /* PROFILE FIX */
+    .profile-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-top img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* NOTIFICATION FIX */
+    .notification-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* INBOX FIX */
+    .inbox-item {
+        flex-direction: column;
+    }
+
+    .inbox-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    /* BUTTON SIZE */
+    .action-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+}

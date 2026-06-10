@@ -133,7 +133,6 @@ function signupUser(){
 }
 
 /* LOGIN */
-
 function loginUser(){
 
     const email =
@@ -145,7 +144,7 @@ function loginUser(){
     const role =
     document.getElementById("loginRole").value;
 
-    // ❌ PASSWORD CHECK
+    // PASSWORD CHECK
     if(!isStrongPassword(password)){
         alert("Password must be 8+ chars with number, symbol & letter");
         return;
@@ -167,15 +166,14 @@ function loginUser(){
             email,
             password,
             role,
-            name: "Guest User"
+            name: email.split("@")[0]   // ✅ FIX HERE
         };
 
         localStorage.setItem(email, JSON.stringify(user));
     }
 
+    // 🔥 IMPORTANT: THIS IS YOUR ACTIVE SESSION
     localStorage.setItem("loggedUser", JSON.stringify(user));
-
-    
 
     updateAuthButton();
     closeModal();
